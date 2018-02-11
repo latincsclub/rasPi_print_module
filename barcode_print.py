@@ -3,12 +3,14 @@ import barcode
 from barcode.writer import ImageWriter
 from PIL import Image
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 conn = cups.Connection()
 printers = conn.getPrinters()
 printer_name = printers.keys()[0]
 
 app = Flask(__name__)
+CORS(app)
 
 def mk_barcode_save(barcoded_thing, save_fname):
     code39 = barcode.get_barcode_class('code39')
