@@ -4,7 +4,7 @@ from barcode.writer import ImageWriter
 from PIL import Image
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-form reportlab.platypus import Image, SimpleDocTemplate
+from reportlab.platypus import Image, SimpleDocTemplate
 from reportlab.lib.styles import getSampleStylesheet
 
 conn = cups.Connection()
